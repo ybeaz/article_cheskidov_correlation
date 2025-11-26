@@ -1,0 +1,68 @@
+# sensitive data
+# .env.production
+
+# compiled output
+/dist
+/_dist
+/node_modules
+assets/appBrowser/index.html
+assets/appBrowser/bundle.min.js
+assets/appBrowser/bundle.min.js.map
+assets/appBrowser/bundle.min.js.LICENSE.txt
+assets/appBrowser/stats.json
+assets/appBrowser/azClient/
+assets/appBrowser/yrClient/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+tsconfig.tsbuildinfo
+seo-research
+
+# OS
+.DS_Store
+
+# Tests
+/coverage.env.development
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+/.vscode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+workspace.code-workspace
+
+# Assets
+certificates/
+archive/
+__archive__/
+
+.env.development
+.env.production
+.env.docker
+.env.test
+cdKYourailsAcademy/output/
+**/__output__/
+cdKYourailsAcademy/mongoDbBackups/
+.yalc
+yalc.lock
+**.tsbuildinfo
+.yarn/
+assets/general/sitemap*
+cdkAiAgents/getCreatedLoginPasswordString.ts
+coverage/

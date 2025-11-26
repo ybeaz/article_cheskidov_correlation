@@ -1,0 +1,269 @@
+%% Template for the submission to:
+%%   The Annals of Statistics [AOS]
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% In this template, the places where you   %%
+%% need to fill in your information are     %%
+%% indicated by '???'.                      %%
+%%                                          %%
+%% Please do not use \input{...} to include %%
+%% other tex files. Submit your LaTeX       %%
+%% manuscript as one .tex document.         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[aos]{imsart}
+
+%% Packages
+\RequirePackage{amsthm,amsmath,amsfonts,amssymb}
+\RequirePackage[numbers]{natbib}
+%\RequirePackage[authoryear]{natbib}%% uncomment this for author-year citations
+%\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}%% uncomment this for coloring bibliography citations and linked URLs
+%\RequirePackage{graphicx}%% uncomment this for including figures
+
+\startlocaldefs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Uncomment next line to change            %%
+%% the type of equation numbering           %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% For Axiom, Claim, Corollary, Hypothesis, %%
+%% Lemma, Theorem, Proposition              %%
+%% use \theoremstyle{plain}                 %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\theoremstyle{plain}
+%\newtheorem{???}{???}
+%\newtheorem*{???}{???}
+%\newtheorem{???}{???}[???]
+%\newtheorem{???}[???]{???}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% For Assumption, Definition, Example,     %%
+%% Notation, Property, Remark, Fact         %%
+%% use \theoremstyle{definition}            %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\theoremstyle{definition}
+%\newtheorem{???}{???}
+%\newtheorem*{???}{???}
+%\newtheorem{???}{???}[???]
+%\newtheorem{???}[???]{???}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Please put your definitions here:        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\endlocaldefs
+
+\begin{document}
+
+\begin{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the title of your article here     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Increment-Based Correlation Coefficient (Cheskidovs’)}
+%\title{A sample article title with some additional note\thanksref{T1}}
+\runtitle{Increment-Based CCC}
+%\thankstext{T1}{A sample of additional note to the title.}
+
+\begin{aug}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Only one address is permitted per author. %%
+%% Only division, organization and e-mail is %%
+%% included in the address.                  %%
+%% Additional information such as            %%
+%% identifying the corresponding author must %%
+%% be included in in the Acknowledgments     %%
+%% section if necessary.                     %%
+%% ORCID can be inserted by command:         %%
+%% \orcid{0000-0000-0000-0000}               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author[A]{\fnms{Roman}~\snm{Cheskidov}\ead[label=e1]{t3531350@yahoo.com}},
+\author[B]{\fnms{Alena}~\snm{Cheskidova}\ead[label=e2]{alena.cheskidova@urfu.ru}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Addresses                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\address[A]{Independent Researcher\printead[presep={,\ }]{e1}}
+\address[B]{Ural Federal University, Yekaterinburg, Russia\printead[presep={,\ }]{e2}}
+\end{aug}
+
+\begin{abstract}
+The article introduces the Increment-Based Concordance Correlation Coefficient (Cheskidovs’) — Increment-based CCC or CCC — as a unit-free, consistent measure of synchrony that overcomes Pearson’s limitations in nonlinear and oscillatory data. By focusing on mutual increments, CCC matches Pearson in monotonic cases but avoids false correlations in complex contexts, making it especially suited for ordered time-series such as financial or climate data. It reliably identifies true dependencies while remaining stable near zero for oscillatory patterns, offering a robust, complementary tool for modern data analysis where directionality of change is crucial.
+\end{abstract}
+
+\begin{keyword}[class=MSC]
+\kwd[Primary ]{62H20}
+\kwd[; secondary ]{62G05}
+\end{keyword}
+
+\begin{keyword}
+\kwd{correlation coefficient}
+\kwd{increment analysis}
+\kwd{time series}
+\kwd{nonlinear dependence}
+\kwd{Cheskidov coefficient}
+\end{keyword}
+
+\end{frontmatter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Please use \tableofcontents for articles %%
+%% with 50 pages and more                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Main text entry area:
+
+\section{Introduction}
+The study of dependence between random variables lies at the core of modern statistics and data analysis. From the classical works of Galton and Pearson, correlation has served as a quantitative measure of how two quantities vary together. The Pearson correlation coefficient (PCC) captures linear dependence, while later developments such as Spearman’s rank correlation and Kendall’s tau extend this idea to monotonic but potentially nonlinear relationships. Despite their wide adoption, these coefficients rely on covariance around mean levels and thus describe positional alignment rather than the synchrony of changes.
+
+In many real-world systems—financial, biological, or physical—the relationships between variables are dynamic and oscillatory, not monotonic. In such settings, PCC may indicate moderate positive or negative correlations even when the underlying processes are symmetric or directionally uncorrelated. This limitation motivates the search for correlation measures that reflect the *coherence of directional changes* rather than static alignment.
+
+We introduce the \textit{Increment-Based Concordance Correlation Coefficient (Cheskidov’s)}, abbreviated as CCC, which quantifies synchrony between ordered sequences based on their increments. CCC evaluates how consistently two sequences increase or decrease together, thus characterizing the concordance of change rather than their mean-centered association. The coefficient takes values in the interval $[-1, 1]$, equals $\pm 1$ for strictly monotonic relationships, and approaches $0$ for oscillatory or symmetric forms.
+
+The CCC provides a robust analytical framework for datasets where the direction of change carries interpretive significance—such as time series with alternating trends, cyclic dynamics in climate or physiology, and adaptive learning processes. In these contexts, CCC remains stable under nonlinear transformations and resistant to misleading correlations typical of mean-based measures.
+
+The remainder of this paper is organized as follows. Section 2 presents the mathematical formulation of CCC and its theoretical properties. Section 3 compares CCC with classical correlation measures on monotonic and oscillatory datasets. Section 4 discusses potential applications and computational aspects. Section 5 concludes with remarks on the broader implications of increment-based correlation in modern data analysis.
+This study addresses that inconsistency by introducing the \textit{Increment-Based Concordance Correlation Coefficient (Cheskidov’s)}—abbreviated as CCC. The method provides a differential approach to dependence measurement, focusing on the synchrony of directional changes rather than covariance around mean levels.
+
+\section{Methods}
+
+Traditionally, correlation or coordination of two sequences is measured by a few formula options: the Pearson coefficient of correlation (PCC), G. Udny Yule’s variate-difference correlation coefficient (1921) \cite{r1}, Lawrence Lin’s concordance correlation coefficient (1989) \cite{r2}, and less often non-parametric correlation measures (Spearman’s rank or Kendall’s tau).
+
+In the context of this article, the closest analogue for the proposed approach is the Pearson correlation coefficient, which assumes measurement based on current values, their average values, and their differences
+\begin{equation}
+\text{PCC} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}.
+\end{equation}
+
+To quantitatively assess the relationship between two sequences, the Cheskidov Correlation Coefficient (Coef. Corr. ChRP, CCC) was proposed. Unlike the classical Pearson correlation coefficient, which operates on deviations of values from their means, this method is based on comparing the increments of sequences. Thus, the analysis concerns not the positions of values relative to the distribution center (mean), but the dynamics of their step-by-step changes. In other words, CCC measures synchrony in dynamics (stepwise movement), which does not require linearity.
+
+The mathematical formulation of the coefficient is given by
+\begin{equation}
+\text{CCC} = \frac{\sum_{i=1}^n (x_i - x_{i-1})(y_i - y_{i-1})}{\sqrt{\sum_{i=1}^n (x_i - x_{i-1})^2} \sqrt{\sum_{i=1}^n (y_i - y_{i-1})^2}}.
+\end{equation}
+
+Here, $X_i, X_{i-1}$ and $Y_i, Y_{i-1}$ denote elements of two numerical sequences. The numerator represents the sum of pairwise products of increments. The denominator serves as a normalizing factor, rendering the coefficient dimensionless and restricting its range to values between $-1$ and $+1$. Optionally, a statistical Bessel’s correction $1/(n-1)$ can be applied to make estimates unbiased; here, we consider the entire population and omit this adjustment.
+
+In contrast to Pearson correlation, which reflects agreement of deviations from means, CCC characterizes the degree of synchrony in the changes of two sequences. If two sequences increase or decrease simultaneously, the product in the numerator is positive, resulting in positive coefficient values. Conversely, if sequences change in opposite directions, the product is negative. This is true for both Pearson and CCC. The structural similarity of the formulas allows easy understanding of differences, advantages, and limitations.  
+
+For a correct calculation of CCC, sequences must be ordered naturally (e.g., a time series). Prior to calculation, data preprocessing includes handling missing values, removing outliers, and aligning sequence lengths. Subsequently, increments for each index $i$ are computed and substituted into the formula.
+
+Values of CCC close to $+1$ indicate high concordance in directional changes; values close to $-1$ indicate concordance in opposite directions; and values near $0$ suggest absence of coordinated dynamics. Thus, CCC detects synchrony or asynchrony in fluctuations, making it applicable to time series, signals, or any dataset where increment structure is important.
+
+Like Pearson correlation, CCC is also a special case of the Cauchy–Schwarz inequality \cite{r3}:
+\begin{enumerate}
+\item CCC is based on two vectors in $\mathbb{R}_{n-1}$ space
+\[
+u = (X_1-X_0, X_2-X_1, \dots, X_n-X_{n-1}), \quad
+v = (Y_1-Y_0, Y_2-Y_1, \dots, Y_n-Y_{n-1}).
+\]
+\item The numerator is the dot product of $u$ and $v$:
+\[
+\langle u,v \rangle = \sum_{i=1}^n (X_i - X_{i-1})(Y_i - Y_{i-1}).
+\]
+\item The denominator is the product of their Euclidean norms:
+\[
+\|u\| \cdot \|v\| = \sqrt{\sum_{i=1}^n (X_i - X_{i-1})^2} \, \sqrt{\sum_{i=1}^n (Y_i - Y_{i-1})^2}.
+\]
+\item By the Cauchy–Schwarz inequality, $|\langle u,v \rangle| \le \|u\|\cdot \|v\|$, which gives
+\[
+-1 \le \frac{\langle u,v \rangle}{\|u\|\cdot \|v\|} \le 1.
+\]
+\end{enumerate}
+
+As a consequence, CCC possesses the following characteristics:
+\begin{enumerate}
+\item[\,(\text{I})] CCC ranges between $-1$ and $1$; it is essentially the cosine of the angle between two normalized centered data vectors.
+\item[\,(\text{II})] CCC is undefined for constant sequences; the denominator becomes zero.
+\item[\,(\text{III})] CCC equals $1$ only if forward-difference vectors are positively proportional, and $-1$ if reversed.
+\item[\,(\text{IV})] Unit-free: independent of measurement units, allowing comparison across scales.
+\item[\,(\text{V})] Symmetric: correlation of $X$ with $Y$ equals correlation of $Y$ with $X$.
+\item[\,(\text{VI})] No linearity assumptions or dependence on averages/peaks.
+\item[\,(\text{VII})] Requires ordered observations (time series, sequences, spatial paths, etc.).
+\end{enumerate}
+
+\textbf{Note:} The proposed formula differs substantially from the cross-correlation of first differences.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Single Appendix:                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{appendix}
+%\section*{???}%% if no title is needed, leave empty \section*{}.
+%\end{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Multiple Appendixes:                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{appendix}
+%\section{???}
+%
+%\section{???}
+%
+%\end{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Support information, if any,             %%
+%% should be provided in the                %%
+%% Acknowledgements section.                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{acks}[Acknowledgments]
+% The authors would like to thank ...
+%\end{acks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Funding information, if any,             %%
+%% should be provided in the                %%
+%% funding section.                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{funding}
+% The first author was supported by ...
+%
+% The second author was supported in part by ...
+%\end{funding}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Supplementary Material, including data   %%
+%% sets and code, should be provided in     %%
+%% {supplement} environment with title      %%
+%% and short description. It cannot be      %%
+%% available exclusively as external link.  %%
+%% All Supplementary Material must be       %%
+%% available to the reader on Project       %%
+%% Euclid with the published article.       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{supplement}
+%\stitle{???}
+%\sdescription{???.}
+%\end{supplement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  The Bibliography                       %%
+%%                                                         %%
+%%  imsart-???.bst  will be used to                        %%
+%%  create a .BBL file for submission.                     %%
+%%                                                         %%
+%%  Note that the displayed Bibliography will not          %%
+%%  necessarily be rendered by Latex exactly as specified  %%
+%%  in the online Instructions for Authors.                %%
+%%                                                         %%
+%%  MR numbers will be added by VTeX.                      %%
+%%                                                         %%
+%%  Use \cite{...} to cite references in text.             %%
+%%                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% if your bibliography is in bibtex format, uncomment commands:
+%\bibliographystyle{imsart-number} % Style BST file (imsart-number.bst or imsart-nameyear.bst)
+%\bibliography{bibliography}       % Bibliography file (usually '*.bib')
+
+%% or include bibliography directly:
+% \begin{thebibliography}{}
+% \bibitem{b1}
+% \end{thebibliography}
+
+\end{document}
