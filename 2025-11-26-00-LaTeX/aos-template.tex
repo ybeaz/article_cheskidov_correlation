@@ -13,7 +13,7 @@
 \newcommand{\cic}{\text{CIC}}
 \newcommand{\cicFull}{\textnormal{Cheskidov Correlation}}
 \newcommand{\pcc}{\text{PCC}}
-\newcommand{\pccFull}{\textnormal{Pierson Correlation}}
+\newcommand{\pccFull}{\textnormal{Galton/Pearson Correlation}}
 
 \newcommand{\addExample}[8]{
   \begin{figure}[H]
@@ -72,7 +72,7 @@
 \end{aug}
 
 \begin{abstract}
-The article introduces the Cheskidov Increment Correlation - \cicFull\ or Cheskidov iCorrelation or $\cic$ — as a unit-free, consistent measure of synchrony that overcomes Pearson’s limitations in nonlinear and oscillatory data. By focusing on mutual increments, $\cic$ matches Pearson in monotonic cases but avoids false correlations in complex contexts, making it especially suited for ordered time-series such as financial or climate data. It reliably identifies true dependencies while remaining stable near zero for oscillatory patterns, offering a robust, complementary tool for modern data analysis where directionality of change is crucial.
+The article introduces the Cheskidov Increment Correlation - \cicFull\ or Cheskidov iCorrelation or $\cic$ — as a unit-free, consistent measure of synchrony that overcomes \pccFull\ limitations in nonlinear and oscillatory data. By focusing on mutual increments, $\cic$ matches \pccFull\ in monotonic cases but avoids false correlations in complex contexts, making it especially suited for ordered time-series such as financial or climate data. It reliably identifies true dependencies while remaining stable near zero for oscillatory patterns, offering a robust, complementary tool for modern data analysis where directionality of change is crucial.
 \end{abstract}
 
 \begin{keyword}[class=MSC]
@@ -94,7 +94,7 @@ The article introduces the Cheskidov Increment Correlation - \cicFull\ or Cheski
 
 
 \section{Introduction}
-The study of dependence between random variables lies at the core of modern statistics and data analysis. From the classical works of Galton and Pearson, correlation has served as a quantitative measure of how two quantities vary together. The Pearson correlation coefficient ($\pcc$) captures linear dependence, while later developments such as Spearman’s rank correlation and Kendall’s tau extend this idea to monotonic but potentially nonlinear relationships. Despite their wide adoption, these coefficients rely on covariance around mean levels and thus describe positional alignment rather than the synchrony of changes.
+The study of dependence between random variables lies at the core of modern statistics and data analysis. From the classical works of Galton and Pearson, correlation has served as a quantitative measure of how two quantities vary together. The \pccFull\ ($\pcc$) captures linear dependence, while later developments such as Spearman’s rank correlation and Kendall’s tau extend this idea to monotonic but potentially nonlinear relationships. Despite their wide adoption, these coefficients rely on covariance around mean levels and thus describe positional alignment rather than the synchrony of changes.
 
 In many real-world systems—financial, biological, or physical—the relationships between variables are dynamic and oscillatory, not monotonic. In such settings, $\pcc$ may indicate moderate positive or negative correlations even when the underlying processes are symmetric or directionally uncorrelated. This limitation motivates the search for correlation measures that reflect the *coherence of directional changes* rather than static alignment.
 
@@ -106,14 +106,14 @@ The remainder of this paper is organized as follows. Section 2 presents the math
 
 \section{Methods}
 
-Traditionally, correlation or coordination of two sequences is measured by a few formula options: the Pearson coefficient of correlation ($\pcc$), G. Udny Yule’s variate-difference correlation coefficient (1921) \cite{r1}, Lawrence Lin’s concordance correlation coefficient (1989) \cite{r2}, and less often non-parametric correlation measures (Spearman’s rank or Kendall’s tau).
+Traditionally, correlation or coordination of two sequences is measured by a few formula options: \pccFull\ ($\pcc$), G. Udny Yule’s variate-difference correlation coefficient (1921) \cite{r1}, Lawrence Lin’s concordance correlation coefficient (1989) \cite{r2}, and less often non-parametric correlation measures (Spearman’s rank or Kendall’s tau).
 
-In the context of this article, the closest analogue for the proposed approach is the Pearson correlation coefficient, which assumes measurement based on current values, their average values, and their differences
+In the context of this article, the closest analogue for the proposed approach is $\pcc$, which assumes measurement based on current values, their average values, and their differences
 \begin{equation}
 \text{$\pcc$} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}.
 \end{equation}
 
-To quantitatively assess the relationship between two sequences, the \cicFull\ ($\cic$) was proposed. Unlike the classical Pearson correlation coefficient, which operates on deviations of values from their means, this method is based on comparing the increments of sequences. Thus, the analysis concerns not the positions of values relative to the distribution center (mean), but the dynamics of their step-by-step changes. In other words, $\cic$ measures synchrony in dynamics (stepwise movement), which does not require linearity.
+To quantitatively assess the relationship between two sequences, the \cicFull\ ($\cic$) was proposed. Unlike the classical $\pcc$, which operates on deviations of values from their means, this method is based on comparing the increments of sequences. Thus, the analysis concerns not the positions of values relative to the distribution center (mean), but the dynamics of their step-by-step changes. In other words, $\cic$ measures synchrony in dynamics (stepwise movement), which does not require linearity.
 
 The mathematical formulation of the coefficient is given by
 \begin{equation}
@@ -122,11 +122,11 @@ The mathematical formulation of the coefficient is given by
 
 Here, $X_i, X_{i-1}$ and $Y_i, Y_{i-1}$ denote elements of two numerical sequences. The numerator represents the sum of pairwise products of increments($X_i, X_{i-1}$)($Y_i, Y_{i-1}$).  The denominator serves as a normalizing factor, rendering the coefficient dimensionless and restricting its range to values between $-1$ and $+1$. Optionally, a statistical Bessel’s correction $1/(n-1)$ can be applied. This adjustment makes estimates of variability (such as variance, covariance, and correlation) unbiased when calculated from a sample rather than the entire population. Later for simplicity we consider all examples as the entire population and don’t use this adjustment.
 
-In contrast to the Pearson correlation, where the magnitude reflects the agreement of variables’ deviations from their means, $\cic$ characterizes the degree of synchrony in the changes of two sequences. For both approaches If two sequences increase or decrease simultaneously, the product in the numerator is positive, resulting in positive values of the coefficient. Conversely, when the sequences change in opposite directions, the product in the numerator is negative, which leads to negative coefficient values. It is true for both the Pierson formula and $\cic$. The general similarity of the “formula architecture” makes it easy to understand the difference, formulas’ pro and cons. The following figure 1 shows one way to visualize this difference.
+In contrast to $\pcc$, where the magnitude reflects the agreement of variables’ deviations from their means, $\cic$ characterizes the degree of synchrony in the changes of two sequences. For both approaches If two sequences increase or decrease simultaneously, the product in the numerator is positive, resulting in positive values of the coefficient. Conversely, when the sequences change in opposite directions, the product in the numerator is negative, which leads to negative coefficient values. It is true for both $\pcc$ and $\cic$ formulas. The general similarity of the “formula architecture” makes it easy to understand the difference, formulas’ pro and cons. The following figure 1 shows one way to visualize this difference.
 
 \begin{figure}
 \includegraphics[width=\textwidth]{figure01.pdf}
-\caption{Visualization of formula comparison (Increment Based Correlation and Pearson correlation Coefficients) using the running people metaphor} %%%- нужна подпись рисунка
+\caption{Visualization of formula comparison (\pccFull\ and \cicFull) using the running people metaphor} %%%- нужна подпись рисунка
 \label{penG}
 \end{figure}
 
@@ -134,7 +134,7 @@ For a correct calculation of $\cic$, the sequences must be presented in an order
 
 The interpretation of results is as follows: values of $\cic$ close to $+1$ indicate a high degree of concordance in the directional changes of the sequences; values close to $-1$ indicate concordance in opposite directions; and values near $0$ suggest the absence of coordinated dynamics. Thus, $\cic$ provides a means to detect synchrony or asynchrony in the fluctuations between sequences, making it applicable to the analysis of time series, signals, or any datasets where the structure of increments is of primary importance.
 
-Like Pearson correlation this correlation coefficient is also a special case of the Cauchy\allowbreak--\allowbreak Schwarz inequality theorem \cite{r3}:
+Like $\pcc$ \cicFull\ is also a special case of the Cauchy\allowbreak--\allowbreak Schwarz inequality theorem \cite{r3}:
 \begin{enumerate}
 \item $\cic$ is based on two vectors in $\mathbb{R}_{n-1}$ space
 \[
@@ -171,7 +171,7 @@ As a consequence, $\cic$ possesses the following characteristics:
 
 \section{Results}
 
-To validate the applicability of the \cicFull\ ($\cic$), several pairs of ordered numerical sequences were analyzed. For demonstration purposes we present here several short simple yet indicative datasets based on functions. We limit the datasets to make the cases more clear, ensuring that results remain the same for the bigger data. We compare it to the well known Pierson coefficient of correlation ($\pcc$) to illustrate the specificity and to show the directions where $\cic$ application could improve data analysis compared to existing approaches.
+To validate the applicability of the \cicFull\ ($\cic$), several pairs of ordered numerical sequences were analyzed. For demonstration purposes we present here several short simple yet indicative datasets based on functions. We limit the datasets to make the cases more clear, ensuring that results remain the same for the bigger data. We compare it to the well known \pccFull\ ($\pcc$) to illustrate the specificity and to show the directions where $\cic$ application could improve data analysis compared to existing approaches.
 
 All data represented ordered series simulating time observations. For each case, both $\cic$ values and $\pcc$ values were calculated for comparison. For all examples X takes values from $0$ to $8$.
 
@@ -242,11 +242,11 @@ All data represented ordered series simulating time observations. For each case,
   {Here $\pcc$ shows a moderately negative relationship due to its linear model constraint, see explanation below. $\cic$ equals zero, reflecting the balance of upward and downward increments across the cycle.}
 
 
-The Pearson correlation coefficient takes a negative value (\text{$\pcc$} = \text{--}0.63) because it measures the linear association between x and y, not the shape of the relationship.
+$\pcc$ takes a negative value (\text{$\pcc$} = \text{--}0.63) because it measures the linear association between x and y, not the shape of the relationship.
 
 In this case, x increases steadily from 0 to 8, while y rises and then falls symmetrically around the midpoint. For small x, y tends to be positive (above its mean). For large x - y tends to be negative (below its mean). This creates an overall downward trend — higher y values are associated with smaller x, and lower y values with larger x. Thus, the best-fitting linear regression line slopes downward, leading to a negative correlation.
 
-Even though y is symmetric and nonlinear (roughly sinusoidal), the Pearson coefficient only captures the linear component of that pattern, so the symmetry doesn’t cancel out to zero — it simply produces a moderate negative linear trend.
+Even though y is symmetric and nonlinear (roughly sinusoidal), $\pcc$ only captures the linear component of that pattern, so the symmetry doesn’t cancel out to zero — it simply produces a moderate negative linear trend.
 
 
 \addExample
@@ -294,14 +294,14 @@ Interpretation \\
 \end{tabular}
 \end{table}
 
-The comparative analysis demonstrates that $\cic$ provides stable and interpretable outcomes across a variety of sequence data. In the case of strictly monotonic functions, the values of $\cic$ and the $\pcc$ are equal, confirming that both measures are capable of capturing linear dependencies in a consistent manner.
+The comparative analysis demonstrates that $\cic$ provides stable and interpretable outcomes across a variety of sequence data. In the case of strictly monotonic functions, the values of $\cic$ and $\pcc$ are equal, confirming that both measures are capable of capturing linear dependencies in a consistent manner.
 In contrast, for non-linear or oscillatory patterns, the behavior of $\cic$ differs from that of $\pcc$. For pure examples, $\pcc$ frequently identifies moderate correlations within cyclic none-linear datasets based on deviation of mean values, while $\cic$ systematically converges to zero, reflecting its emphasis on the synchrony of increments (whether they are linear or non-linear nature).
 
 \section{Discussion Section: Interpreting Scientific Research}
 
-Criticism of the Pearson correlation coefficient is not new. For example, in 1921, G. Udny Yule \cite{r1} highlighted issues such as spurious correlation, non-independence of observations, inflated significance, and the dominance of trends, among other limitations. Later, in 1989, Lawrence I-Kuei Lin \cite{r2} emphasized that the Pearson coefficient is insensitive to bias and measures only linear association rather than true agreement. Specifically, it cannot assess whether paired values lie close to the 45$^\circ$ line of perfect concordance, and it may yield inflated values under shifts, making it inadequate for evaluating reproducibility. Sz\'ekely, G. J., Rizzo, M. L., \& Bakirov 1989 \cite{r4} and Chatterjee, S. 2021 \cite{r5} suggested new approaches too. 
+Criticism of the \pccFull\ coefficient is not new. For example, in 1921, G. Udny Yule \cite{r1} highlighted issues such as spurious correlation, non-independence of observations, inflated significance, and the dominance of trends, among other limitations. Later, in 1989, Lawrence I-Kuei Lin \cite{r2} emphasized that $\pcc$ is insensitive to bias and measures only linear association rather than true agreement. Specifically, it cannot assess whether paired values lie close to the 45$^\circ$ line of perfect concordance, and it may yield inflated values under shifts, making it inadequate for evaluating reproducibility. Sz\'ekely, G. J., Rizzo, M. L., \& Bakirov 1989 \cite{r4} and Chatterjee, S. 2021 \cite{r5} suggested new approaches too. 
 
-The comparative analysis highlights several significant differences between $\cic$ and traditional correlation measures such as the Pearson correlation coefficient ($\pcc$), Spearman’s rank correlation, and Kendall’s tau. While $\pcc$ reflects linear dependence between variables, and Spearman and Kendall are designed to detect monotonic (not necessarily linear) relationships, $\cic$ is fundamentally distinct in its conceptual approach. It is based on a differential analysis of synchronized increments with a normalized numerator, which captures the direction and concordance of changes within sequences. This focus on global synchrony distinguishes $\cic$ from existing methods and provides an additional methodological perspective.
+The comparative analysis highlights several significant differences between $\cic$ and traditional correlation measures such as $\pcc$, Spearman’s rank correlation, and Kendall’s tau. While $\pcc$ reflects linear dependence between variables, and Spearman and Kendall are designed to detect monotonic (not necessarily linear) relationships, $\cic$ is fundamentally distinct in its conceptual approach. It is based on a differential analysis of synchronized increments with a normalized numerator, which captures the direction and concordance of changes within sequences. This focus on global synchrony distinguishes $\cic$ from existing methods and provides an additional methodological perspective.
 
 From a methodological standpoint, $\pcc$ is theoretically valid only under the assumption of linear dependence and approximate normality of the data distribution. In practice, however, $\pcc$ is often applied to nonlinear, unknown or structurally complex datasets. Such usage goes beyond its intended applicability and may lead to misleading or statistically biased interpretations. Spearman’s and Kendall’s coefficients provide greater robustness to nonlinear monotonic transformations but remain sensitive to local ordering of the data rather than global directionality. In contrast, $\cic$ does not have these limitations: it aggregates directional increments across the entire sample, neutralizing local fluctuations that could otherwise generate spurious correlations.
 
