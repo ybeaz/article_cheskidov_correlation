@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1764217511.00172 "/Users/admin/Dev/article_cheskidov_correlation/2025-11-26-00-LaTeX/aos-template.tex" "aos-template.pdf" "aos-template" 1764217511.45575 0
-  "/Users/admin/Dev/article_cheskidov_correlation/2025-11-26-00-LaTeX/aos-template.tex" 1764217510.8039 25557 92d54163b8b68d669993c9ce001ad425 ""
+["pdflatex"] 1765646561.23086 "/Users/admin/Dev/article_cheskidov_correlation/2025-11-26-00-LaTeX/aos-template.tex" "aos-template.pdf" "aos-template" 1765646561.5997 0
+  "/Users/admin/Dev/article_cheskidov_correlation/2025-11-26-00-LaTeX/aos-template.tex" 1765646560.59515 25382 c3eb34c7fe299b862650f59fa70c928e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -99,8 +99,8 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1761876089 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761875932 3345739 9d0e165e2cd1d1eda75b2520e36b7b97 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "aos-template.aux" 1764217511.40112 3921 878866ee17fda41ecb2fb21ef319de14 "pdflatex"
-  "aos-template.tex" 1764217510.8039 25557 92d54163b8b68d669993c9ce001ad425 ""
+  "aos-template.aux" 1765646561.55611 4047 772fb5bed2722cb3942aa947b6ca6971 "pdflatex"
+  "aos-template.tex" 1765646560.59515 25382 c3eb34c7fe299b862650f59fa70c928e ""
   "figure01.pdf" 1764215044.26755 179032 79f567ace7c5889e55eb31f010d7f120 ""
   "figure11.pdf" 1764215044.2679 16330 0e8eb21bf83eff16f5d73e41a866e5f4 ""
   "figure12.pdf" 1764215044.26821 16333 921f88fc06dd3ac532933599ab5187f4 ""
