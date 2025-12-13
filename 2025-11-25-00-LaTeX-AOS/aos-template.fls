@@ -1,8 +1,8 @@
-PWD /Users/admin/Dev/2025-09-05-84-Article-CorrelationCC/2025-11-25-00-LaTeX
+PWD /Users/admin/Dev/article_cheskidov_correlation/2025-11-25-00-LaTeX
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/admin/Dev/2025-09-05-84-Article-CorrelationCC/2025-11-25-00-LaTeX/aos-template.tex
+INPUT /Users/admin/Dev/article_cheskidov_correlation/2025-11-25-00-LaTeX/aos-template.tex
 OUTPUT aos-template.log
 INPUT ./imsart.cls
 INPUT imsart.cls
