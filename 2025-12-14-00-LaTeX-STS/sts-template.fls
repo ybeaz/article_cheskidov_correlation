@@ -1,9 +1,9 @@
-PWD /Users/admin/Dev/article_cheskidov_correlation/2025-12-13-00-LaTeX-AOS
+PWD /Users/admin/Dev/article_cheskidov_correlation/2025-12-14-00-LaTeX-STS
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/admin/Dev/article_cheskidov_correlation/2025-12-13-00-LaTeX-AOS/aos-template.tex
-OUTPUT aos-template.log
+INPUT /Users/admin/Dev/article_cheskidov_correlation/2025-12-14-00-LaTeX-STS/sts-template.tex
+OUTPUT sts-template.log
 INPUT ./imsart.cls
 INPUT imsart.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -83,10 +83,10 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./aos-template.aux
-INPUT ./aos-template.aux
-INPUT aos-template.aux
-OUTPUT aos-template.aux
+INPUT ./sts-template.aux
+INPUT ./sts-template.aux
+INPUT sts-template.aux
+OUTPUT sts-template.aux
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -157,7 +157,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
-OUTPUT aos-template.pdf
+OUTPUT sts-template.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
@@ -253,7 +253,7 @@ INPUT ./figure17.pdf
 INPUT ./figure17.pdf
 INPUT ./figure17.pdf
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
-INPUT aos-template.aux
+INPUT sts-template.aux
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
