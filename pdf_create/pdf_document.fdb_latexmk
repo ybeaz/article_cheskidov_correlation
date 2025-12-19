@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1765729773.3094 "/Users/admin/Dev/article_cheskidov_correlation/pdf_create/pdf_document.tex" "pdf_document.pdf" "pdf_document" 1765729773.59976 0
-  "/Users/admin/Dev/article_cheskidov_correlation/pdf_create/pdf_document.tex" 1765729773.14907 659 2481af86de844ce5a78f297b2e7f587c ""
+["pdflatex"] 1766077451.6293 "/Users/admin/Dev/article_cheskidov_correlation/pdf_create/pdf_document.tex" "pdf_document.pdf" "pdf_document" 1766077452.87341 0
+  "/Users/admin/Dev/article_cheskidov_correlation/pdf_create/pdf_document.tex" 1766077451.45834 759 7e28662d75aee32852b4dfe08d7065df ""
   "/usr/local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty" 1734129479 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
@@ -31,10 +31,10 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1761875932 3345739 9d0e165e2cd1d1eda75b2520e36b7b97 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "pdf_document.aux" 1765729773.58295 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "pdf_document.tex" 1765729773.14907 659 2481af86de844ce5a78f297b2e7f587c ""
-  "photo_2025-12-14 08.00.47.jpeg" 1765728017.72654 224103 8498947db465336d106b0a035d6311ab ""
-  "photo_2025-12-14 08.00.52.jpeg" 1765728050.82191 101030 0bb30a66b0fc10dc71f0ad42589d782e ""
+  "SocialSecurityCard CheskidovaAlyona.png" 1766077333.2839 2241060 3da2f6d835b38b15c9b8924a8d1a0b07 ""
+  "SocialSecurityCard CheskidovaAlyona1.png" 1766077333.19843 2401099 ffcde666a9062145c42d7f52ed5626b9 ""
+  "pdf_document.aux" 1766077452.85957 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "pdf_document.tex" 1766077451.45834 759 7e28662d75aee32852b4dfe08d7065df ""
   (generated)
   "pdf_document.aux"
   "pdf_document.log"
