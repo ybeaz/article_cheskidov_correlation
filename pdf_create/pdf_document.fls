@@ -67,15 +67,15 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.st
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-INPUT ./SocialSecurityCard CheskidovaAlyona.png
-INPUT ./SocialSecurityCard CheskidovaAlyona.png
-INPUT ./SocialSecurityCard CheskidovaAlyona.png
-INPUT ./SocialSecurityCard CheskidovaAlyona.png
+INPUT ./photo_2026-01-22 21.15.55.jpeg
+INPUT ./photo_2026-01-22 21.15.55.jpeg
+INPUT ./photo_2026-01-22 21.15.55.jpeg
+INPUT ./photo_2026-01-22 21.15.55.jpeg
 OUTPUT pdf_document.pdf
-INPUT ./SocialSecurityCard CheskidovaAlyona.png
-INPUT ./SocialSecurityCard CheskidovaAlyona1.png
-INPUT ./SocialSecurityCard CheskidovaAlyona1.png
-INPUT ./SocialSecurityCard CheskidovaAlyona1.png
-INPUT ./SocialSecurityCard CheskidovaAlyona1.png
-INPUT ./SocialSecurityCard CheskidovaAlyona1.png
+INPUT ./photo_2026-01-22 21.15.55.jpeg
+INPUT ./photo_2026-01-22 21.15.59.jpeg
+INPUT ./photo_2026-01-22 21.15.59.jpeg
+INPUT ./photo_2026-01-22 21.15.59.jpeg
+INPUT ./photo_2026-01-22 21.15.59.jpeg
+INPUT ./photo_2026-01-22 21.15.59.jpeg
 INPUT pdf_document.aux

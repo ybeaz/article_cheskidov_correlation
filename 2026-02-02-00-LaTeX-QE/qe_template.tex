@@ -1,0 +1,491 @@
+% Template for the submission to:
+%   Quantitative Economics   [qe] https://vtex-soft.github.io/texsupport.econometricsociety-qe/
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% In this template, the places where you   %%
+%% need to fill in your information are     %%
+%% indicated by '???'.                      %%
+%%                                          %%
+%% Please do not use \input{...} to include %%
+%% other tex files. Submit your LaTeX       %%
+%% manuscript as one .tex document.         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% use option [draft] for initial submission
+%            [final] for the prepublication
+\documentclass[qe,nameyear,draft]{econsocart}
+%
+%\usepackage{}
+\RequirePackage[colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue,pagebackref]{hyperref}
+
+\usepackage{type1cm}
+\usepackage{titlesec}
+\usepackage{float}
+
+\RequirePackage{amsthm,amsmath,amsfonts,amssymb}
+\RequirePackage[authoryear]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue]{hyperref}
+\RequirePackage{graphicx}
+
+\startlocaldefs
+
+\newcommand{\cic}{\text{CIC}}
+\newcommand{\cicFull}{\textnormal{Cheskidov Correlation}}
+\newcommand{\pcc}{\text{PCC}}
+\newcommand{\pccFull}{\textnormal{Galton/Pearson Correlation}}
+
+\newcommand{\addExample}[8]{
+  \begin{figure}[H]
+
+  \titleformat{\subsection}[hang]
+    {\normalfont\fontsize{11pt}{13pt}\itshape\raggedright}
+    {\thesubsection}{1em}{}
+
+  \subsection{Example #1. #2}
+
+  \begin{minipage}[t]{0.45\linewidth}
+    \vspace{0pt}
+    \centering
+    \resizebox{!}{4cm}{\includegraphics{#3}}
+    \caption{#2}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.50\linewidth}
+    \vspace{20pt}
+    \noindent
+    $x = #4$ \\[4pt]
+    $y(x) = #5$ \\[6pt]
+    $\cic = #6$, \quad $\pcc = #7$
+
+    \medskip
+
+    #8
+  \end{minipage}
+
+  \end{figure}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Uncomment next line to change            %%
+%% the type of equation numbering           %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\numberwithin{equation}{section}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% For Assumption, Axiom, Claim, Corollary, %%
+%% Lemma, Theorem, Proposition, Hypothezis, %%
+%% Fact                                     %%
+%% use \theoremstyle{plain}                 %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\theoremstyle{plain}
+%\newtheorem{???}{???}
+%\newtheorem*{???}{???}
+%\newtheorem{???}{???}[???]
+%\newtheorem{???}[???]{???}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% For Definition, Example, Remark,         %%
+%% Notation, Property                       %%
+%% use \theoremstyle{definition}            %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\theoremstyle{definition}
+%\newtheorem{???}{???}
+%\newtheorem*{???}{???}
+%\newtheorem{???}{???}[???]
+%\newtheorem{???}[???]{???}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Please put your definitions here:        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\endlocaldefs
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Increment Based Correlation}
+\runtitle{\cicFull}
+
+\begin{aug}
+% use \particle for den|der|de|van|von (only lc!)
+% [add1]{\fnms{}~\snm{}\ead[label=e?]{}}
+%
+%% e-mail is mandatory for each author
+%
+%%% initials in fnms (if any) with spaces
+%
+\author[add1]{\fnms{Roman}~\snm{Cheskidov}\ead[label=e1]{t3531350@yahoo.com}}
+\author[add2]{\fnms{Alena}~\snm{Cheskidova}\ead[label=e2]{alyona.cheskidova@gmail.com}}
+\author[add1]{\fnms{Anna}~\snm{Cheskidova}\ead[label=e3]{anya2.cheskidova@gmail.com}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Addresses                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\address[add1]{%
+\orgdiv{Independent Researcher},
+\orgname{UserTo Inc., San Francisco, USA}}
+
+\address[add2]{%
+\orgdiv{Metallurgical Department},
+\orgname{Ural Federal University, Yekaterinburg, RF}}
+
+\end{aug}
+
+
+%% Put support info here
+\begin{funding}
+We owe a profound debt of gratitude to Stuart Umpleby (The George Washington University, Washington, DC) for his foundational support spanning conceptual guidance and steadfast encouragement.
+\end{funding}
+%
+\begin{abstract}
+The article introduces the Increment Based Correlation - \cicFull\ or Cheskidov iCorrelation or $\cic$ — as a unit-free, consistent measure of synchrony that overcomes \pccFull\ limitations in nonlinear and oscillatory data. By focusing on mutual increments, $\cic$ matches \pccFull\ in monotonic cases but avoids false correlations in complex contexts, making it especially suited for ordered time-series such as financial or climate data. It reliably identifies true dependencies while remaining stable near zero for oscillatory patterns, offering a robust, complementary tool for modern data analysis where directionality of change is crucial.
+\end{abstract}
+
+\begin{keyword}
+\kwd{correlation coefficient}
+\kwd{increment analysis}
+\kwd{time series}
+\kwd{nonlinear directional dependence}
+\kwd{synchrony measurement}
+\kwd{Cheskidov Increment Correlation ($\cic$)}
+\kwd{\cicFull}
+\end{keyword}
+
+\begin{keyword}[class=JEL] %% alphabetical order
+\kwd{C10} % Econometric and statistical methods: general
+\kwd{C13} % Estimation: general
+\kwd{C22} % Single equation models; single variables: time-series models; dynamic quantile regressions; dynamic treatment effect models; diffusion processes
+\kwd{C32} % Multiple or simultaneous equation models: time-series models; dynamic quantiles; dynamic treatment effect models; diffusion processes
+\kwd{C46} % Specific statistical methods: specific distributions; specific statistics
+\end{keyword}
+
+\end{frontmatter}
+
+
+
+\section{Introduction}
+The study of dependence between random variables lies at the core of modern statistics and data analysis. From the classical works of Galton and Pearson, correlation has served as a quantitative measure of how two quantities vary together. The \pccFull\ ($\pcc$) captures linear dependence, while later developments such as Spearman’s rank correlation and Kendall’s tau extend this idea to monotonic but potentially nonlinear relationships. Despite their adoption, the later methods provides non-parametric alternatives that still rely on rank ordering rather than the actual dynamics of change.
+
+In many real-world systems such as financial, biological, or physical the relationships between variables are dynamic and oscillatory, not monotonic. In such settings, $\pcc$ may indicate moderate positive or negative correlations even when the underlying processes are symmetric or directionally uncorrelated. This inconsistency motivates the search for correlation measures that reflect the *coherence of directional changes* rather than static alignment.
+
+We introduce the \textit{Cheskidov Increment Correlation or just \cicFull}, abbreviated as $\cic$, which quantifies synchrony between ordered sequences based on their increments. $\cic$ evaluates how coherently two sequences increase or decrease together, thus characterizing the concordance of change rather than their mean-centered association. As we can see later the coefficient takes values in the interval $[-1, 1]$, equals $\pm 1$ for strictly monotonic relationships, and approaches $0$ for oscillatory or symmetric forms.
+
+$\cic$ provides a robust analytical framework for datasets where the direction of change carries interpretive significance—such as time series with alternating trends, cyclic dynamics in climate or physiology, and adaptive learning processes. In these contexts, $\cic$ remains stable under nonlinear transformations and resistant to misleading correlations typical of mean-based measures.
+
+The remainder of this paper is organized as follows. Section 2 presents the mathematical formulation of $\cic$ and its theoretical properties. Section 3 compares $\cic$ with classical correlation measures on monotonic and oscillatory datasets. Section 4 discusses potential applications and computational aspects. Section 5 concludes with remarks on the broader implications of increment-based correlation in modern data analysis.
+
+
+\section{Methods}
+
+Traditionally, correlation or coordination of two sequences is measured by a few formula options: \pccFull\ ($\pcc$), G. Udny Yule’s variate-difference correlation coefficient (1921) \cite{r1}, Lawrence Lin’s concordance correlation coefficient (1989) \cite{r2}, and less often non-parametric correlation measures (Spearman’s rank or Kendall’s tau).
+
+In the context of this article, the closest analogue for the proposed approach is $\pcc$, which assumes measurement based on current values, their average values, and their differences
+\begin{equation}
+\text{$\pcc$} = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}.
+\end{equation}
+
+To quantitatively assess the relationship between two sequences, the \cicFull\ ($\cic$) was proposed. Unlike the classical $\pcc$, which operates on deviations of values from their means, this method is based on comparing the increments of sequences. Thus, the analysis concerns not the positions of values relative to the distribution center (mean), but the dynamics of their step-by-step changes. In other words, $\cic$ measures synchrony in dynamics (stepwise movement), which does not require linearity.
+
+The mathematical formulation of the coefficient is given by
+\begin{equation}
+\text{$\cic$} = \frac{\sum_{i=1}^n (x_i - x_{i-1})(y_i - y_{i-1})}{\sqrt{\sum_{i=1}^n (x_i - x_{i-1})^2} \sqrt{\sum_{i=1}^n (y_i - y_{i-1})^2}}.
+\end{equation}
+
+Here, $X_i, X_{i-1}$ and $Y_i, Y_{i-1}$ denote elements of two numerical sequences. The numerator represents the sum of pairwise products of increments($X_i, X_{i-1}$)($Y_i, Y_{i-1}$).  The denominator serves as a normalizing factor, rendering the coefficient dimensionless and restricting its range to values between $-1$ and $+1$. Optionally, a statistical Bessel’s correction $1/(n-1)$ can be applied. This adjustment makes estimates of variability (such as variance, covariance, and correlation) unbiased when calculated from a sample rather than the entire population. Later for simplicity we consider all examples as the entire population and don’t use this adjustment.
+
+In contrast to $\pcc$, where the magnitude reflects the agreement of variables’ deviations from their means, $\cic$ characterizes the degree of synchrony in the changes of two sequences. For both approaches If two sequences increase or decrease simultaneously, the product in the numerator is positive, resulting in positive values of the coefficient. Conversely, when the sequences change in opposite directions, the product in the numerator is negative, which leads to negative coefficient values. It is true for both $\pcc$ and $\cic$ formulas. The general similarity of the “formula architecture” makes it easy to understand the difference, formulas’ pro and cons. The following figure 1 show the one way to visualize this difference.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{../figures/figure01.pdf}
+  \caption{Visualization of \pccFull\ and \cicFull\ formula using the running people metaphor}
+  \label{fig:PCC}
+\end{figure}
+
+For a correct calculation of $\cic$, the sequences must be presented in an ordered form, reflecting the natural order of observations (e.g., a time series). Prior to calculation, data preprocessing includes handling missing values, removing outliers, and aligning the lengths of the sequences. Subsequently, increments for each index $i$ are computed and substituted into the formula.
+
+The interpretation of results is analogous to that of PCC: values of $\cic$ close to $+1$ indicate a high degree of concordance in the directional changes of the sequences; values close to $-1$ indicate concordance in opposite directions; and values near $0$ suggest the absence of coordinated dynamics. Thus, $\cic$ provides the ability to replace PCC for detecting synchrony or asynchrony of oscillations between sequences.
+
+Like $\pcc$ \cicFull\ is also a special case of the Cauchy\allowbreak--\allowbreak Schwarz inequality theorem \cite{r3}:
+\begin{enumerate}
+\item $\cic$ is based on two vectors in $\mathbb{R}_{n-1}$ space
+\[
+u = (X_1-X_0, X_2-X_1, \dots, X_n-X_{n-1}), \quad
+v = (Y_1-Y_0, Y_2-Y_1, \dots, Y_n-Y_{n-1}).
+\]
+\item The numerator is the dot product of $u$ and $v$
+\[
+\langle u,v \rangle = \sum_{i=1}^n (X_i - X_{i-1})(Y_i - Y_{i-1}).
+\]
+\item The denominator is the product of their Euclidean norms
+\[
+\|u\| \cdot \|v\| = \sqrt{\sum_{i=1}^n (X_i - X_{i-1})^2} \, \sqrt{\sum_{i=1}^n (Y_i - Y_{i-1})^2}.
+\]
+\item By the Cauchy–Schwarz inequality, $|\langle u,v \rangle| \le \|u\|\cdot \|v\|$, which gives
+\[
+-1 \le \frac{\langle u,v \rangle}{\|u\|\cdot \|v\|} \le 1.
+\]
+\end{enumerate}
+
+As a consequence, $\cic$ possesses the following characteristics:
+\begin{itemize}
+\item $\cic$ ranges between $-1$ and $1$; it is essentially the cosine of the angle between two normalized centered data vectors.
+\item $\cic$ is undefined for constant sequences; the denominator becomes zero.
+\item $\cic$ equals $1$ only if forward-difference vectors are positively proportional, and $-1$ if reversed.
+\item Unit-free: independent of measurement units, allowing comparison across scales.
+\item Symmetric: correlation of $X$ with $Y$ equals correlation of $Y$ with $X$.
+\item No linearity assumptions or dependence on averages/peaks.
+\item Requires ordered observations (time series, sequences, spatial paths, etc.).
+\end{itemize}
+
+
+\textbf{Note:} The proposed formula differs substantially from the cross-correlation of first differences.
+
+
+\section{Results}
+
+To validate the applicability of the \cicFull\ ($\cic$), several pairs of ordered numerical sequences were analyzed. For demonstration purposes we present here several short simple yet indicative datasets based on functions. We limit the datasets to make the cases more clear, ensuring that results remain the same for the bigger data. We compare it to the well known \pccFull\ ($\pcc$) to illustrate the specificity and to show the directions where $\cic$ application could improve data analysis compared to existing approaches.
+
+All data represented ordered series simulating time observations. For each case, both $\cic$ values and $\pcc$ values were calculated for comparison. For all examples X takes values from $0$ to $8$.
+
+
+\addExample
+  {1}
+  {An increasing linear function (with positive slope)}
+  {../figures/figure11.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4}
+  {1}
+  {1}
+  {Both coefficients consistently capture the perfect positive dependence. $\cic$ interprets this as complete synchrony in opposite increments.} 
+
+
+\addExample
+  {2}
+  {A decreasing linear function (with negative slope)}
+  {../figures/figure12.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {4, 3.5, 3,  2.5, 2, 1.5, 1,  0.5, 0}
+  {-1}
+  {-1}
+  {Both coefficients consistently capture the perfect negative dependence. $\cic$ interprets this as complete synchrony in opposite increments.}
+
+
+\addExample
+  {3}
+  {A linear function with increasing and decreasing parts, symmetric}
+  {../figures/figure13.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {0, 1, 2, 3, 4, 3, 2, 1, 0}
+  {0}
+  {0}
+  {Both measures indicate the absence of overall directional dependence. $\cic$ highlights the cancellation of upward and downward increments, producing net synchrony equal to zero.}
+
+
+\addExample
+  {4}
+  {A linear function with increasing and decreasing parts, none symmetric (I variant)}
+  {../figures/figure14.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {0, 1, 2, 3, 4, 3.5, 3, 2.5, 0}
+  {0}
+  {0.22}
+  {Here, $\pcc$ captures a linear shift around the mean of Y, creating a numerical illusion of correlation with X. $\cic$, on the other hand, is sensitive only to the synchrony of X and Y trends and ultimately returns a correlation value of zero, which aligns with the definition of correlation.} 
+
+
+\addExample
+  {5}
+  {A linear function with increasing and decreasing parts, none symmetric (II variant)}
+  {../figures/figure15.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {0, 1, 2, 3, 4, 1.5, 1, 0.5, 0}
+  {0}
+  {-0.17}
+  {The negative $\pcc$ reflects a linear shift relative to the mean of Y, thereby producing a spurious indication of correlation. In contrast, $\cic$ accounts for the directions of change between the variables and therefore yields a correlation value of zero. This result is consistent with the conceptual definition of correlation as a measure of coordinated variation.}
+
+
+\addExample
+  {6}
+  {A sinusoid symmetric}
+  {../figures/figure16.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {0, 3, 4, 3, 0, -3, -4, -3, 0}
+  {0}
+  {-0.63}
+  {Here $\pcc$ shows a moderately negative relationship due to its linear model constraint, see explanation below. $\cic$ equals zero, reflecting the balance of upward and downward increments across the cycle.}
+
+
+$\pcc$ takes a negative value (\text{$\pcc$} = \text{--}0.63) because it measures the linear association between x and y, not the shape of the relationship.
+
+In this case, x increases steadily from 0 to 8, while y rises and then falls symmetrically around the midpoint. For small x, y tends to be positive (above its mean). For large x - y tends to be negative (below its mean). This creates an overall downward trend — higher y values are associated with smaller x, and lower y values with larger x. Thus, the best-fitting linear regression line slopes downward, leading to a negative correlation.
+
+Even though y is symmetric and nonlinear (roughly sinusoidal), $\pcc$ only captures the linear component of that pattern, so the symmetry doesn’t cancel out to zero — it simply produces a moderate negative linear trend.
+
+
+\addExample
+  {7}
+  {An inverted sinusoid symmetric}
+  {../figures/figure17.pdf}
+  {0, 1, 2, 3, 4, 5, 6, 7, 8}
+  {0, -3, -4, -3, 0, 3, 4, 3, 0}
+  {0}
+  {0.63}
+  {Similar to the previous case, $\pcc$ identifies a moderate correlation. The explanation is the same as for Example 6 with inversion. $\cic$ remains zero, interpreting the balanced cyclic pattern as absence of any synchrony X and Y, which is intuitively visible.}
+
+
+
+
+
+\begin{table}
+\caption{Comparison $\cic$ and $\pcc$}
+\label{table1}
+\begin{tabular}{@{}lccccl@{}}
+\hline
+\# &
+Type of sequence &
+Intuitively &
+$\cic$ &
+$\pcc$ &
+Interpretation \\
+\hline
+1 & Increasing linear               & 1  & 1 & 1    & Perfect positive dependence \\
+2 & Decreasing linear               & -1 & -1 & -1  & Perfect negative dependence \\
+3 & Symmetric growth and decline    & 0  & 0 & 0    & No overall dependence \\
+ & Non-symmetric growth/decline (I) & 0 & 0 & 0.22 
+  & $\pcc$ detects weak correlation,\\
+  & & & & & $\cic$ = 0 \\
+5 & Non-symmetric growth/decline (II)& 0  & 0 & -0.17 
+  & $\pcc$ shows weak negative,\\
+  & & & & & $\cic$ = 0 \\
+6 & Sinusoid-like, symmetric (I)     & 0  & 0 & -0.63 
+  & $\pcc$ shows negative correlation,\\
+  & & & & & $\cic$ = 0 \\
+7 & Sinusoid-like, symmetric (II)    & 0  & 0 & 0.63 
+  & $\pcc$ shows positive correlation,\\
+  & & & & & $\cic$ = 0 \\
+\hline
+\end{tabular}
+\end{table}
+
+The comparative analysis demonstrates that $\cic$ provides stable and interpretable outcomes across a variety of sequence data. In the case of strictly monotonic functions, the values of $\cic$ and $\pcc$ are equal, confirming that both measures are capable of capturing linear dependencies in a consistent manner.
+In contrast, for non-linear or oscillatory patterns, the behavior of $\cic$ differs from that of $\pcc$. For pure examples, $\pcc$ frequently identifies moderate correlations within cyclic none-linear datasets based on deviation of mean values, while $\cic$ systematically converges to zero, reflecting its emphasis on the synchrony of increments (whether they are linear or non-linear nature).
+
+\section{Discussion Section: Interpreting Scientific Research}
+
+Criticism of the \pccFull\ coefficient is not new. For example, in 1921, G. Udny Yule \cite{r1} highlighted issues such as spurious correlation, non-independence of observations, inflated significance, and the dominance of trends, among other limitations. Later, in 1989, Lawrence I-Kuei Lin \cite{r2} emphasized that $\pcc$ is insensitive to bias and measures only linear association rather than true agreement. Specifically, it cannot assess whether paired values lie close to the 45$^\circ$ line of perfect concordance, and it may yield inflated values under shifts, making it inadequate for evaluating reproducibility. Sz\'ekely, G. J., Rizzo, M. L., \& Bakirov 1989 \cite{r4} and Chatterjee, S. 2021 \cite{r5} suggested new approaches too. 
+
+The comparative analysis highlights several significant differences between $\cic$ and traditional correlation measures such as $\pcc$ and Spearman’s rank correlation. Kendall's tau is very similar in spirit to our proposal - CIC. However, it is based on pairwise comparisons of data points rather than increments, making it sensitive to local ordering rather than overall trends.  $\cic$ is fundamentally distinct in its conceptual approach. It is directly based on a differential analysis of synchronized increments with a normalized numerator, which captures the direction and concordance of changes within sequences. This focus on global synchrony distinguishes $\cic$ from existing methods and provides an additional methodological perspective.
+
+Regarding practical applications, $\cic$ demonstrates clear advantages in situations where the research focus is on the directionality of changes rather than deviations from the mean. For example
+\begin{enumerate}
+\item Economic time series analysis. In financial markets, stock prices or commodity indices often exhibit oscillatory and cyclical changes. $\pcc$ may detect moderate correlations between assets due to temporary coinciding rises and falls, creating an illusion of dependency. $\cic$ allows identifying true synchrony in changes while ignoring random local fluctuations.
+
+\item Biomedical signal analysis. In physiological data such as heart rate, blood pressure, or electroencephalogram signals, cyclical and irregular oscillations are common. $\cic$ can be used to assess synchrony between signals from different organs or brain regions, providing a more accurate reflection of coordinated changes than $\pcc$, which may interpret noisy coincidences as correlations.
+
+\item Environmental and climate studies. Temperature, precipitation, or pollutant concentration data often follow seasonal or wave-like patterns. $\cic$ enables determining the degree to which changes in one variable are synchronized with another without being distorted by temporal oscillations.
+
+\item Technical and engineering systems. For monitoring and predicting the state of complex systems (e.g., vibration sensors in mechanical equipment), it is important to consider the direction of changes rather than deviation from the mean. $\cic$ reliably identifies synchronous behavior of system components, which cannot be achieved using $\pcc$ in cases of nonlinear oscillations.
+\end{enumerate}
+
+The novelty of $\cic$ lies in its ability to provide a mathematically consistent and interpretable measure of synchrony for datasets where $\pcc$ and related coefficients may fail. While $\pcc$ is frequently applied to nonlinear or structurally unknown data, potentially producing unreliable conclusions, $\cic$ avoids these pitfalls by not relying on assumptions of linearity or normality. Instead, it directly considers the trend of mutual increments in variables, making it more suitable for analyzing oscillatory, non-monotonic, or non-Gaussian datasets.
+
+Thus, $\cic$ complements existing measures by filling an important methodological gap. It coincides with $\pcc$ in strictly monotonic cases, maintaining comparability, but diverges in oscillatory or complex contexts, avoiding false-positive correlations and providing results that better align with both intuitive and theoretical expectations. This makes $\cic$ a valuable tool for modern data analysis, particularly in dynamic and nonlinear domains where traditional correlation methods exhibit substantial limitations.
+
+While highlighting the advantages of $\cic$, it is important to note its limitations. $\cic$ is applicable primarily to ordered time-series data, where the sequential connection is inherent in the nature of the observations. Typical examples include weather records, financial prices, or annual demographic statistics. By contrast, $\cic$ is not suitable for unordered data such as the heights of students in a classroom, single blood pressure measurements from patients, customer satisfaction scores, IQ test results, or chemical concentrations measured across independent samples. One possible approach in such cases is to impose an order across relevant dimensions before applying $\cic$.
+
+In special situations where the data exhibit large amplitudes of change and appear incomparable from one step to the next, a logarithmic transformation may be applied, as is common in other mathematical and statistical contexts.
+
+Another approach is to use the Pearson and Cheskidov coefficients of correlation jointly. The former reflects linear interdependence, while the latter is neutral to both linear and nonlinear relationships. The difference between the two measures may provide an indirect indication of the extent of nonlinearity in the correlation structure, which can be valuable in specific applications and large-scale comparative analyses.
+
+
+\section{Conclusion Section}
+
+This study introduced the \cicFull\ ($\cic$) as a novel approach to evaluating synchrony between variables. By applying $\cic$ across monotonic, oscillatory, and mixed time series, the method consistently reflected the presence or absence of directed dependencies. In monotonic cases, $\cic$ reliably reproduces expected correlations, while in more complex forms it maintains stability yielding true negatives (zero correlation) when the condition is indeed false.
+
+These properties suggest that $\cic$ may offer particular utility in the analysis of dynamic datasets of unknown nature, where the directionality of changes carries greater interpretive value than covariance around the means of $X$ and $Y$.
+
+Thus, $\cic$ has proven itself to be a rigorous and complementary tool in correlation analysis, offering clear advantages, although limited to time series cases. For unordered data with no directionality, $\cic$ requires additional data processing and careful consideration of its application.
+
+
+\begin{thebibliography}{5}
+% \bibitem{r1}
+% \textsc{G. Udny Yule} (1921). “On the Time-Correlation Problem, with Especial Reference to the Variate- Difference Correlation Method.” \textit{Journal of the Royal Statistical Society}, Vol. 84, No. 4 (Jul., 1921), pp. 497-537. Published By: Oxford University Press. 
+
+
+\bibitem[\protect\citeauthoryear{G. Udny Yule}{1921}]{r1}
+\textsc{G. Udny Yule} (1921).
+On the Time-Correlation Problem, with Especial Reference to the Variate- Difference Correlation Method.
+\textit{Journal of the Royal Statistical Society Vol. 84, No. 4 (Jul., 1921), Published By: Oxford University Press.}
+\textbf{1} 497-537.
+
+
+\bibitem[\protect\citeauthoryear{Lawrence I-Kuei Lin}{1989}]{r2}
+\textsc{Lawrence I-Kuei Lin} (1989). “A Concordance Correlation Coefficient to Evaluate Reproducibility.” \textit{Biometrics}, Vol. 45, No. 1 (Mar., 1989),
+\textbf{2} 255-268.
+
+\bibitem[\protect\citeauthoryear{Cauchy, A.-L.}{1821}]{r3}
+\textsc{Cauchy, A.-L.} (1821). "Sur les formules qui résultent de l'emploie du signe et sur > ou <, et sur les moyennes entre plusieurs quantités", \textit{Cours d'Analyse, 1er Partie: Analyse Algébrique} 1821; OEuvres Ser.2 III
+\textbf{3} 373-377.
+
+\bibitem[\protect\citeauthoryear{Székely, G. J., Rizzo, M. L., \& Bakirov, N. K.}{2007}]{r4}
+\textsc{Székely, G. J., Rizzo, M. L., \& Bakirov, N. K.} (2007). Measuring and Testing Dependence by Correlation of Distances. \textit{Annals of Statistics}, 35(6),
+\textbf{4} 2769–2794.
+
+\bibitem[\protect\citeauthoryear{Chatterjee, S.}{2021}]{r5}
+\textsc{Chatterjee, S.} (2021). A New Coefficient of Correlation. \textit{Journal of the American Statistical Association}, 116(536),
+\textbf{5} 2009–2022.
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Main text entry area:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Single Appendix:            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{appendix}
+%\section*{???} %% if no title is needed, leave empty \section*{}.
+%\end{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Multiple Appendixes:        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{appendix}
+%\section{???}
+%
+%\section{???}
+%\end{appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliography:                            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% IMPORTANT: References in the bibliography should be complete, 
+%% including the first and last names, and date of publication.
+
+%% If your bibliography is in bibtex format, uncomment commands:
+%\bibliographystyle{qe} % Style BST file
+%\bibliography{bibliography}  % Bibliography file (usually '*.bib')
+
+%% Or include bibliography directly:
+% \begin{thebibliography}{}
+% \bibitem{b1}
+% \end{thebibliography}
+
+\end{document}
